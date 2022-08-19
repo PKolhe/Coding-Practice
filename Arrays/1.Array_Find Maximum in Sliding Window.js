@@ -63,9 +63,17 @@ let findMaxSlidingWindow = function(nums, windowSize) {
   let numsList = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 6, 9, -3, 23, -1, 34, 56, 67, -1, -4, -8, -2, 9, 10, 34, 67], [4, 5, 6, 1, 2, 3], [9, 5, 3, 1, 6, 3]];
   
   for (let i=0; i< numsList.length; i++){
-    console.log((i + 1) + ". Original list:\t" + printArray(numsList[i]));
-    console.log("   Window size:\t\t" +  targetList[i]);
-    console.log("   Max:\t\t\t" +  printArray(findMaxSlidingWindow(numsList[i], targetList[i]))); 
+    console.log((i + 1) + ". Original list:\t" + numsList[i]);
+    console.log("Window size:\t\t" +  targetList[i]);
+    let res = findMaxSlidingWindow(numsList[i], targetList[i]);
+    console.log("Max:\t" +  res); 
     console.log("-----------------------------------------------------------------------------------------------------\n")
   }
   
+  // This function is used to show sample input/output in html file only.
+  function getOutput() {
+    let input = "Original list:\t" + numsList[0] +"\nWindow size:\t"+  targetList[0]
+    let output = "Max:\t" + findMaxSlidingWindow(numsList[0], targetList[0]);
+    document.getElementById('inputVal').value = input;
+    document.getElementById('outputVal').value = output;
+  }
